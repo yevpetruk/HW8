@@ -3,26 +3,49 @@ from . import views
 
 urlpatterns = [
     # ==============================================
-    # ЗАДАНИЕ 1: ЗАДАЧИ ПО ДНЮ НЕДЕЛИ
+    # ЗАДАНИЕ 1: GENERIC VIEWS ДЛЯ ЗАДАЧ
     # ==============================================
-    path('tasks/by-weekday/', views.TaskListByWeekdayView.as_view(),
-         name='tasks-by-weekday'),
+
+    # ListCreateAPIView для задач
+    path('tasks/', views.TaskListCreateView.as_view(), name='task-list-create'),
+
+    # RetrieveUpdateDestroyAPIView для задач
+    path('tasks/<int:id>/', views.TaskRetrieveUpdateDestroyView.as_view(),
+         name='task-detail-update-delete'),
 
     # ==============================================
-    # ЗАДАНИЕ 2: ПАГИНИРОВАННЫЕ ПОДЗАДАЧИ
+    # ЗАДАНИЕ 2: GENERIC VIEWS ДЛЯ ПОДЗАДАЧ
     # ==============================================
-    path('subtasks/paginated/', views.SubTaskListView.as_view(),
-         name='subtasks-paginated'),
+
+    # ListCreateAPIView для подзадач
+    path('subtasks/', views.SubTaskListCreateView.as_view(), name='subtask-list-create'),
+
+    # RetrieveUpdateDestroyAPIView для подзадач
+    path('subtasks/<int:id>/', views.SubTaskRetrieveUpdateDestroyView.as_view(),
+         name='subtask-detail-update-delete'),
 
     # ==============================================
-    # ЗАДАНИЕ 3: ФИЛЬТРАЦИЯ ПОДЗАДАЧ
+    # GENERIC VIEWS ДЛЯ КАТЕГОРИЙ
     # ==============================================
-    path('subtasks/filter/', views.SubTaskFilterView.as_view(),
-         name='subtasks-filter'),
+
+    # ListCreateAPIView для категорий
+    path('categories/', views.CategoryListCreateView.as_view(), name='category-list-create'),
+
+    # RetrieveUpdateDestroyAPIView для категорий
+    path('categories/<int:id>/', views.CategoryRetrieveUpdateDestroyView.as_view(),
+         name='category-detail-update-delete'),
+
+    # ==============================================
+    # АГРЕГИРУЮЩИЙ ЭНДПОИНТ (ОСТАВЛЯЕМ)
+    # ==============================================
+
+    # Статистика задач
+    path('tasks/stats/', views.TaskStatsAPIView.as_view(), name='task-stats'),
 
     # ==============================================
     # ВСПОМОГАТЕЛЬНЫЕ ЭНДПОИНТЫ
     # ==============================================
-    path('create-test-data/', views.CreateTestDataView.as_view(),
-         name='create-test-data'),
+
+    # Создание тестовых данных
+    path('create-test-data/', views.CreateTestDataView.as_view(), name='create-test-data'),
 ]
