@@ -1,0 +1,15 @@
+2026-01-12 03:30:49,281 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 03:30:49,284 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 03:34:05,272 DEBUG 0.0s
+SQL: SELECT COUNT(*) AS "__count" FROM "task_manager_task"
+Params: ()
+2026-01-12 03:34:05,274 DEBUG 0.0s
+SQL: SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."created_at" DESC LIMIT 10
+Params: ()

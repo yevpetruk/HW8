@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tasks.middleware.RequestLoggingMiddleware',
 ]
 
 ROOT_URLCONF = 'DjangoProject8.urls'
@@ -128,14 +129,125 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Настройки Django REST Framework
 REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'tasks.pagination.SafePageNumberPagination',  # Глобальная пагинация
+    'PAGE_SIZE': 6,  # Задание 1: не более 6 объектов
+
+    # Остальные настройки DRF
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
     ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+}
+
+# ==============================================
+# ЗАДАНИЕ 2: НАСТРОЙКА ЛОГИРОВАНИЯ
+# ==============================================
+
+# Создаем папку logs если ее нет
+import os
+
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+        'http_format': {
+            'format': '{asctime} {levelname} {method} {path} {status_code} {duration}s',
+            'style': '{',
+        },
+        'db_format': {
+            'format': '{asctime} {levelname} {duration}s\nSQL: {sql}\nParams: {params}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        # Задание 2: Логи в консоль (работа сервера)
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+
+        # Задание 2: Логи HTTP запросов в файл
+        'http_file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'http_logs.log'),
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 5,
+            'formatter': 'http_format',
+        },
+
+        # Задание 2: Логи запросов в базу данных в файл
+        'db_file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'db_logs.log'),
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 5,
+            'formatter': 'db_format',
+        },
+
+        # Общий файл логов
+        'file': {
+            'level': 'WARNING',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'general.log'),
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 5,
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        # Логгер Django (общий)
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+
+        # Задание 2: Логи работы включенного сервера (в консоль)
+        'django.server': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+
+        # Задание 2: Логи HTTP запросов и их статусов
+        'django.request': {
+            'handlers': ['http_file', 'console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+
+        # Задание 2: Логи запросов в базу данных
+        'django.db.backends': {
+            'handlers': ['db_file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+
+        # Логи нашего приложения
+        'tasks': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
 }
