@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework',
     'drf_yasg',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
@@ -152,28 +153,35 @@ REST_FRAMEWORK = {
     ],
 }
 
-# ЗАДАНИЕ 1: Настройки SimpleJWT
+# Настройки SimpleJWT
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': False,
-    'BLACKLIST_AFTER_ROTATION': True,
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,  # Важно для безопасности
+    'BLACKLIST_AFTER_ROTATION': True,  # Помещать использованные токены в blacklist
+    'UPDATE_LAST_LOGIN': True,
 
     'ALGORITHM': 'HS256',
     'SIGNING_KEY': 'django-insecure-your-secret-key-here-change-in-production',
-    # В продакшене заменить на надежный ключ
     'VERIFYING_KEY': None,
     'AUDIENCE': None,
     'ISSUER': None,
 
     'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
     'USER_ID_FIELD': 'id',
     'USER_ID_CLAIM': 'user_id',
 
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
     'TOKEN_TYPE_CLAIM': 'token_type',
-}
 
+    'JTI_CLAIM': 'jti',
+
+    # Для работы с blacklist
+    'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
+    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+}
 # ==============================================
 # ЗАДАНИЕ 2: НАСТРОЙКА ЛОГИРОВАНИЯ
 # ==============================================
