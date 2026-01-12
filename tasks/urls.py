@@ -1,42 +1,34 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . import views
+
+# Создаем router для ViewSet
+router = DefaultRouter()
+# Задание 1: Регистрируем CategoryViewSet
+router.register(r'categories', views.CategoryViewSet, basename='category')
 
 urlpatterns = [
     # ==============================================
-    # ЗАДАНИЕ 1: GENERIC VIEWS ДЛЯ ЗАДАЧ
+    # ЗАДАНИЕ 1: ROUTER ДЛЯ CATEGORYVIEWSET
+    # ==============================================
+    path('', include(router.urls)),
+
+    # ==============================================
+    # СУЩЕСТВУЮЩИЕ GENERIC VIEWS
     # ==============================================
 
-    # ListCreateAPIView для задач
+    # Задачи
     path('tasks/', views.TaskListCreateView.as_view(), name='task-list-create'),
-
-    # RetrieveUpdateDestroyAPIView для задач
     path('tasks/<int:id>/', views.TaskRetrieveUpdateDestroyView.as_view(),
          name='task-detail-update-delete'),
 
-    # ==============================================
-    # ЗАДАНИЕ 2: GENERIC VIEWS ДЛЯ ПОДЗАДАЧ
-    # ==============================================
-
-    # ListCreateAPIView для подзадач
+    # Подзадачи
     path('subtasks/', views.SubTaskListCreateView.as_view(), name='subtask-list-create'),
-
-    # RetrieveUpdateDestroyAPIView для подзадач
     path('subtasks/<int:id>/', views.SubTaskRetrieveUpdateDestroyView.as_view(),
          name='subtask-detail-update-delete'),
 
     # ==============================================
-    # GENERIC VIEWS ДЛЯ КАТЕГОРИЙ
-    # ==============================================
-
-    # ListCreateAPIView для категорий
-    path('categories/', views.CategoryListCreateView.as_view(), name='category-list-create'),
-
-    # RetrieveUpdateDestroyAPIView для категорий
-    path('categories/<int:id>/', views.CategoryRetrieveUpdateDestroyView.as_view(),
-         name='category-detail-update-delete'),
-
-    # ==============================================
-    # АГРЕГИРУЮЩИЙ ЭНДПОИНТ (ОСТАВЛЯЕМ)
+    # АГРЕГИРУЮЩИЕ ЭНДПОИНТЫ
     # ==============================================
 
     # Статистика задач
