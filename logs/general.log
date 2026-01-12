@@ -1,0 +1,8 @@
+WARNING 2026-01-12 03:56:01,667 middleware HTTP Error 401: POST /api/token/refresh/
+WARNING 2026-01-12 03:57:59,667 middleware HTTP Error 404: GET /api/tasks/1/
+WARNING 2026-01-12 03:58:36,844 middleware HTTP Error 404: GET /api/tasks/        
+WARNING 2026-01-12 04:04:01,868 middleware HTTP Error 400: POST /api/tasks/
+WARNING 2026-01-12 04:05:01,638 middleware HTTP Error 404: POST /api/categories/ 
+WARNING 2026-01-12 04:05:27,469 middleware HTTP Error 401: POST /api/tasks/
+WARNING 2026-01-12 04:53:56,596 middleware HTTP Error 404: DELETE /api/tasks/1/
+WARNING 2026-01-12 04:54:07,115 middleware HTTP Error 403: DELETE /api/tasks/2/

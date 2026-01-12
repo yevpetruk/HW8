@@ -13,3 +13,518 @@ Params: ()
 2026-01-12 03:34:05,274 DEBUG 0.0s
 SQL: SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."created_at" DESC LIMIT 10
 Params: ()
+2026-01-12 03:50:36,076 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 03:50:36,079 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 03:50:51,321 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 03:50:51,325 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 03:52:47,647 DEBUG 0.0s
+SQL: SELECT 1 AS "a" FROM "auth_user" WHERE "auth_user"."username" = 'testuser' LIMIT 1
+Params: (1, 'testuser')
+2026-01-12 03:52:48,607 DEBUG 0.0s
+SQL: INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$1000000$jqDfZMkqYZkYLzxtnHgw9c$hvq8M3pqMQYQlN8TVWAKopkwUFC+PUcgMyv/qCc6xdo=', NULL, 0, 'testuser', '', '', 'test@example.com', 0, 1, '2026-01-12 02:52:47.698957') RETURNING "auth_user"."id"
+Params: ('pbkdf2_sha256$1000000$jqDfZMkqYZkYLzxtnHgw9c$hvq8M3pqMQYQlN8TVWAKopkwUFC+PUcgMyv/qCc6xdo=', None, False, 'testuser', '', '', 'test@example.com', False, True, '2026-01-12 02:52:47.698957')
+2026-01-12 03:53:48,371 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'testuser' LIMIT 21
+Params: ('testuser',)
+2026-01-12 03:56:28,307 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21
+Params: (2,)
+2026-01-12 03:57:59,665 DEBUG 0.0s
+SQL: SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" WHERE "task_manager_task"."id" = 1 LIMIT 21
+Params: (1,)
+2026-01-12 03:58:49,202 DEBUG 0.0s
+SQL: SELECT COUNT(*) AS "__count" FROM "task_manager_task"
+Params: ()
+2026-01-12 03:58:49,203 DEBUG 0.0s
+SQL: SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."created_at" DESC LIMIT 5
+Params: ()
+2026-01-12 04:00:29,726 DEBUG 0.01600000000325963s
+SQL: SELECT COUNT(*) AS "__count" FROM "task_manager_subtask"
+Params: ()
+2026-01-12 04:00:29,728 DEBUG 0.0s
+SQL: SELECT "task_manager_subtask"."id", "task_manager_subtask"."title", "task_manager_subtask"."description", "task_manager_subtask"."task_id", "task_manager_subtask"."status", "task_manager_subtask"."deadline", "task_manager_subtask"."created_at" FROM "task_manager_subtask" ORDER BY "task_manager_subtask"."created_at" DESC LIMIT 5
+Params: ()
+2026-01-12 04:01:31,009 DEBUG 0.015000000013969839s
+SQL: SELECT COUNT(*) AS "__count" FROM "task_manager_task"
+Params: ()
+2026-01-12 04:01:31,010 DEBUG 0.0s
+SQL: SELECT "task_manager_task"."id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" ORDER BY "task_manager_task"."created_at" DESC LIMIT 5
+Params: ()
+2026-01-12 04:04:01,592 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21
+Params: (2,)
+2026-01-12 04:04:10,017 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2 LIMIT 21
+Params: (2,)
+2026-01-12 04:18:08,393 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 04:18:08,398 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 04:18:45,030 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 04:18:45,033 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 04:21:05,771 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 04:21:05,771 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 04:21:20,987 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 04:21:20,990 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 04:21:20,990 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 04:21:20,990 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 04:21:20,998 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+Params: None
+2026-01-12 04:21:20,998 DEBUG 0.0s
+SQL: PRAGMA foreign_keys = OFF
+Params: None
+2026-01-12 04:21:20,998 DEBUG 0.0s
+SQL: PRAGMA foreign_keys
+Params: None
+2026-01-12 04:21:20,998 DEBUG 0.0s
+SQL: BEGIN
+Params: None
+2026-01-12 04:21:21,163 DEBUG 0.0s
+SQL: CREATE TABLE "new__task_manager_subtask" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(200) NOT NULL UNIQUE, "description" text NOT NULL, "status" varchar(20) NOT NULL, "deadline" datetime NULL, "created_at" datetime NOT NULL, "task_id" bigint NOT NULL REFERENCES "task_manager_task" ("id") DEFERRABLE INITIALLY DEFERRED, "owner_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED)
+Params: None
+2026-01-12 04:21:21,163 DEBUG 0.0s
+SQL: INSERT INTO "new__task_manager_subtask" ("id", "title", "description", "status", "deadline", "created_at", "task_id", "owner_id") SELECT "id", "title", "description", "status", "deadline", "created_at", "task_id", 1 FROM "task_manager_subtask"
+Params: ()
+2026-01-12 04:21:21,170 DEBUG 0.0s
+SQL: DROP TABLE "task_manager_subtask"
+Params: ()
+2026-01-12 04:21:21,170 DEBUG 0.0s
+SQL: ALTER TABLE "new__task_manager_subtask" RENAME TO "task_manager_subtask"
+Params: ()
+2026-01-12 04:21:21,183 DEBUG 0.0s
+SQL: CREATE INDEX "task_manager_subtask_task_id_95d6e401" ON "task_manager_subtask" ("task_id")
+Params: ()
+2026-01-12 04:21:21,191 DEBUG 0.0s
+SQL: CREATE INDEX "task_manager_subtask_owner_id_49dc8d25" ON "task_manager_subtask" ("owner_id")
+Params: ()
+2026-01-12 04:21:21,203 DEBUG 0.0s
+SQL: CREATE TABLE "new__task_manager_task" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(200) NOT NULL UNIQUE, "description" text NOT NULL, "status" varchar(20) NOT NULL, "deadline" datetime NULL, "created_at" datetime NOT NULL, "owner_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED)
+Params: None
+2026-01-12 04:21:21,211 DEBUG 0.0s
+SQL: INSERT INTO "new__task_manager_task" ("id", "title", "description", "status", "deadline", "created_at", "owner_id") SELECT "id", "title", "description", "status", "deadline", "created_at", 1 FROM "task_manager_task"
+Params: ()
+2026-01-12 04:21:21,216 DEBUG 0.0s
+SQL: DROP TABLE "task_manager_task"
+Params: ()
+2026-01-12 04:21:21,222 DEBUG 0.0s
+SQL: ALTER TABLE "new__task_manager_task" RENAME TO "task_manager_task"
+Params: ()
+2026-01-12 04:21:21,227 DEBUG 0.0s
+SQL: CREATE INDEX "task_manager_task_owner_id_848c5118" ON "task_manager_task" ("owner_id")
+Params: ()
+2026-01-12 04:21:21,245 DEBUG 0.0s
+SQL: CREATE TABLE "new__task_manager_subtask" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "description" text NOT NULL, "status" varchar(20) NOT NULL, "deadline" datetime NULL, "created_at" datetime NOT NULL, "task_id" bigint NOT NULL REFERENCES "task_manager_task" ("id") DEFERRABLE INITIALLY DEFERRED, "owner_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "title" varchar(200) NOT NULL)
+Params: None
+2026-01-12 04:21:21,253 DEBUG 0.0s
+SQL: INSERT INTO "new__task_manager_subtask" ("id", "description", "status", "deadline", "created_at", "task_id", "owner_id", "title") SELECT "id", "description", "status", "deadline", "created_at", "task_id", "owner_id", "title" FROM "task_manager_subtask"
+Params: ()
+2026-01-12 04:21:21,258 DEBUG 0.0s
+SQL: DROP TABLE "task_manager_subtask"
+Params: ()
+2026-01-12 04:21:21,263 DEBUG 0.0s
+SQL: ALTER TABLE "new__task_manager_subtask" RENAME TO "task_manager_subtask"
+Params: ()
+2026-01-12 04:21:21,274 DEBUG 0.0s
+SQL: CREATE INDEX "task_manager_subtask_task_id_95d6e401" ON "task_manager_subtask" ("task_id")
+Params: ()
+2026-01-12 04:21:21,274 DEBUG 0.0s
+SQL: CREATE INDEX "task_manager_subtask_owner_id_49dc8d25" ON "task_manager_subtask" ("owner_id")
+Params: ()
+2026-01-12 04:21:21,295 DEBUG 0.0s
+SQL: CREATE TABLE "new__task_manager_task" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "description" text NOT NULL, "status" varchar(20) NOT NULL, "deadline" datetime NULL, "created_at" datetime NOT NULL, "owner_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "title" varchar(200) NOT NULL)
+Params: None
+2026-01-12 04:21:21,301 DEBUG 0.0s
+SQL: INSERT INTO "new__task_manager_task" ("id", "description", "status", "deadline", "created_at", "owner_id", "title") SELECT "id", "description", "status", "deadline", "created_at", "owner_id", "title" FROM "task_manager_task"
+Params: ()
+2026-01-12 04:21:21,306 DEBUG 0.0s
+SQL: DROP TABLE "task_manager_task"
+Params: ()
+2026-01-12 04:21:21,310 DEBUG 0.0s
+SQL: ALTER TABLE "new__task_manager_task" RENAME TO "task_manager_task"
+Params: ()
+2026-01-12 04:21:21,315 DEBUG 0.0s
+SQL: CREATE INDEX "task_manager_task_owner_id_848c5118" ON "task_manager_task" ("owner_id")
+Params: ()
+2026-01-12 04:21:21,315 DEBUG 0.0s
+SQL: INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('tasks', '0004_subtask_owner_task_owner_alter_subtask_title_and_more', '2026-01-12 03:21:21.315532') RETURNING "django_migrations"."id"
+Params: ('tasks', '0004_subtask_owner_task_owner_alter_subtask_title_and_more', '2026-01-12 03:21:21.315532')
+2026-01-12 04:21:21,315 DEBUG 0.0s
+SQL: PRAGMA foreign_key_check
+Params: None
+2026-01-12 04:21:21,417 DEBUG 0.0s
+SQL: PRAGMA foreign_keys = ON
+Params: None
+2026-01-12 04:21:21,418 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+Params: ()
+2026-01-12 04:21:21,418 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'
+Params: ('admin',)
+2026-01-12 04:21:21,418 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'admin' AND "django_content_type"."model" IN ('logentry'))
+Params: ('admin', 'logentry')
+2026-01-12 04:21:21,428 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (1) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+Params: (1,)
+2026-01-12 04:21:21,428 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'
+Params: ('admin',)
+2026-01-12 04:21:21,428 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'
+Params: ('auth',)
+2026-01-12 04:21:21,433 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" IN ('permission', 'user', 'group'))
+Params: ('auth', 'permission', 'user', 'group')
+2026-01-12 04:21:21,433 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (2, 3, 4) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+Params: (2, 3, 4)
+2026-01-12 04:21:21,433 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'
+Params: ('auth',)
+2026-01-12 04:21:21,433 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'
+Params: ('contenttypes',)
+2026-01-12 04:21:21,433 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'contenttypes' AND "django_content_type"."model" IN ('contenttype'))
+Params: ('contenttypes', 'contenttype')
+2026-01-12 04:21:21,438 DEBUG 0.01600000000325963s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+Params: (5,)
+2026-01-12 04:21:21,438 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'
+Params: ('contenttypes',)
+2026-01-12 04:21:21,440 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'
+Params: ('sessions',)
+2026-01-12 04:21:21,440 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'sessions' AND "django_content_type"."model" IN ('session'))
+Params: ('sessions', 'session')
+2026-01-12 04:21:21,442 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+Params: (6,)
+2026-01-12 04:21:21,442 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'
+Params: ('sessions',)
+2026-01-12 04:21:21,444 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'tasks'
+Params: ('tasks',)
+2026-01-12 04:21:21,445 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'tasks' AND "django_content_type"."model" IN ('task', 'subtask', 'category'))
+Params: ('tasks', 'task', 'subtask', 'category')
+2026-01-12 04:21:21,447 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9, 7) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+Params: (8, 9, 7)
+2026-01-12 04:21:21,447 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'tasks'
+Params: ('tasks',)
+2026-01-12 04:28:41,567 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:28:41,567 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:28:41,567 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:28:41,567 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:28:41,583 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:28:41,583 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:28:41,583 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'
+2026-01-12 04:28:41,587 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'admin' AND "django_content_type"."model" IN ('logentry'))
+2026-01-12 04:28:41,587 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (1) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:28:41,587 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'
+2026-01-12 04:28:41,587 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'
+2026-01-12 04:28:41,587 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" IN ('user', 'permission', 'group'))
+2026-01-12 04:28:41,587 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (2, 3, 4) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:28:41,587 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'
+2026-01-12 04:28:41,587 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'
+2026-01-12 04:28:41,597 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'contenttypes' AND "django_content_type"."model" IN ('contenttype'))
+2026-01-12 04:28:41,598 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'sessions' AND "django_content_type"."model" IN ('session'))
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'tasks'
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'tasks' AND "django_content_type"."model" IN ('task', 'category', 'subtask'))
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9, 7) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:28:41,599 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'tasks'
+2026-01-12 04:28:49,271 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:28:49,271 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:29:13,040 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:29:13,050 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:29:13,050 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:29:13,050 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:29:13,064 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:29:13,064 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:29:13,066 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'
+2026-01-12 04:29:13,066 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'admin' AND "django_content_type"."model" IN ('logentry'))
+2026-01-12 04:29:13,066 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (1) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:13,070 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" IN ('group', 'user', 'permission'))
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (2, 3, 4) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'contenttypes' AND "django_content_type"."model" IN ('contenttype'))
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'
+2026-01-12 04:29:13,071 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'
+2026-01-12 04:29:13,080 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'sessions' AND "django_content_type"."model" IN ('session'))
+2026-01-12 04:29:13,080 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:13,081 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'
+2026-01-12 04:29:13,081 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'tasks'
+2026-01-12 04:29:13,081 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'tasks' AND "django_content_type"."model" IN ('task', 'subtask', 'category'))
+2026-01-12 04:29:13,081 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9, 7) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:13,081 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'tasks'
+2026-01-12 04:29:17,117 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:29:17,117 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:29:26,376 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:29:26,379 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:29:26,379 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:29:26,379 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:29:26,393 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:29:26,393 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:29:26,393 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'
+2026-01-12 04:29:26,393 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'admin' AND "django_content_type"."model" IN ('logentry'))
+2026-01-12 04:29:26,398 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (1) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:26,398 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'
+2026-01-12 04:29:26,398 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'
+2026-01-12 04:29:26,398 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" IN ('user', 'permission', 'group'))
+2026-01-12 04:29:26,398 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (2, 3, 4) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:26,398 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'
+2026-01-12 04:29:26,398 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'contenttypes' AND "django_content_type"."model" IN ('contenttype'))
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'sessions' AND "django_content_type"."model" IN ('session'))
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'tasks'
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'tasks' AND "django_content_type"."model" IN ('subtask', 'task', 'category'))
+2026-01-12 04:29:26,404 DEBUG 0.0s
+SQL: SELECT "auth_permission"."content_type_id" AS "content_type", "auth_permission"."codename" AS "codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9, 7) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, 2 ASC
+2026-01-12 04:29:26,414 DEBUG 0.0s
+SQL: SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'tasks'
+2026-01-12 04:29:29,853 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:29:29,857 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:43:13,759 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:43:13,763 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:43:28,154 DEBUG 0.0s
+SQL: 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name
+2026-01-12 04:43:28,162 DEBUG 0.0s
+SQL: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+2026-01-12 04:45:50,719 DEBUG 0.0s
+SQL: SELECT 1 AS "a" FROM "auth_user" WHERE "auth_user"."username" = 'user1' LIMIT 1
+2026-01-12 04:45:51,647 DEBUG 0.01600000000325963s
+SQL: INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$1000000$xOckWBlKgJH1wQCLMWi8ab$HC1A19YFx1bwVEQx09hHrpuAN4108DGcRFqrSuVlK7s=', NULL, 0, 'user1', '', '', 'user1@example.com', 0, 1, '2026-01-12 03:45:50.762334') RETURNING "auth_user"."id"
+2026-01-12 04:47:04,993 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'user1' LIMIT 21
+2026-01-12 04:49:22,519 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 LIMIT 21
+2026-01-12 04:50:37,324 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 LIMIT 21
+2026-01-12 04:50:37,325 DEBUG 0.0s
+SQL: SELECT COUNT(*) AS "__count" FROM "task_manager_task" WHERE "task_manager_task"."owner_id" = 3
+2026-01-12 04:50:37,327 DEBUG 0.0s
+SQL: SELECT "task_manager_task"."id", "task_manager_task"."owner_id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" WHERE "task_manager_task"."owner_id" = 3 ORDER BY "task_manager_task"."created_at" DESC LIMIT 1
+2026-01-12 04:50:37,329 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 LIMIT 21
+2026-01-12 04:50:37,332 DEBUG 0.0s
+SQL: SELECT "task_manager_category"."id", "task_manager_category"."name", "task_manager_category"."is_deleted", "task_manager_category"."deleted_at", "task_manager_category"."created_at" FROM "task_manager_category" INNER JOIN "task_manager_task_categories" ON ("task_manager_category"."id" = "task_manager_task_categories"."category_id") WHERE (NOT "task_manager_category"."is_deleted" AND "task_manager_task_categories"."task_id" = 32)
+2026-01-12 04:50:37,333 DEBUG 0.0s
+SQL: SELECT "task_manager_subtask"."id", "task_manager_subtask"."owner_id", "task_manager_subtask"."title", "task_manager_subtask"."description", "task_manager_subtask"."task_id", "task_manager_subtask"."status", "task_manager_subtask"."deadline", "task_manager_subtask"."created_at" FROM "task_manager_subtask" WHERE "task_manager_subtask"."task_id" = 32 ORDER BY "task_manager_subtask"."created_at" DESC
+2026-01-12 04:51:59,045 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 3 LIMIT 21
+2026-01-12 04:51:59,046 DEBUG 0.0s
+SQL: SELECT COUNT(*) AS "__count" FROM "task_manager_task" WHERE "task_manager_task"."owner_id" = 3
+2026-01-12 04:51:59,047 DEBUG 0.0s
+SQL: SELECT "task_manager_task"."id", "task_manager_task"."owner_id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" WHERE "task_manager_task"."owner_id" = 3 ORDER BY "task_manager_task"."created_at" DESC LIMIT 1
+2026-01-12 04:52:36,105 DEBUG 0.0s
+SQL: SELECT 1 AS "a" FROM "auth_user" WHERE "auth_user"."username" = 'user2' LIMIT 1
+2026-01-12 04:52:37,138 DEBUG 0.0s
+SQL: INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$1000000$yD0QBbPJlvvvtFfeJzjcdN$BvPsyNhq3bcC+KScW5SorOkhWN3zpQaO2qO9mK2Bzw0=', NULL, 0, 'user2', '', '', 'user2@example.com', 0, 1, '2026-01-12 03:52:36.105296') RETURNING "auth_user"."id"
+2026-01-12 04:52:57,889 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'user2' LIMIT 21
+2026-01-12 04:53:56,594 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 4 LIMIT 21
+2026-01-12 04:53:56,595 DEBUG 0.0s
+SQL: SELECT "task_manager_task"."id", "task_manager_task"."owner_id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" WHERE "task_manager_task"."id" = 1 LIMIT 21
+2026-01-12 04:54:07,113 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 4 LIMIT 21
+2026-01-12 04:54:07,114 DEBUG 0.0s
+SQL: SELECT "task_manager_task"."id", "task_manager_task"."owner_id", "task_manager_task"."title", "task_manager_task"."description", "task_manager_task"."status", "task_manager_task"."deadline", "task_manager_task"."created_at" FROM "task_manager_task" WHERE "task_manager_task"."id" = 2 LIMIT 21
+2026-01-12 04:54:07,114 DEBUG 0.0s
+SQL: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21

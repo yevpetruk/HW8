@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'tasks',
     'django_filters',
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -126,22 +128,50 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 # Настройки Django REST Framework
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'tasks.pagination.SafePageNumberPagination',  # Глобальная пагинация
-    'PAGE_SIZE': 6,  # Задание 1: не более 6 объектов
+    # ЗАДАНИЕ 1: JWT аутентификация
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
 
-    # Остальные настройки DRF
+    # ЗАДАНИЕ 2: Пермишены по умолчанию
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+
+    # ЗАДАНИЕ 3: Глобальная пагинация
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,  # 5 элементов по умолчанию
+
+    # Фильтрация, поиск, сортировка
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
     ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [],
+}
+
+# ЗАДАНИЕ 1: Настройки SimpleJWT
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': 'django-insecure-your-secret-key-here-change-in-production',
+    # В продакшене заменить на надежный ключ
+    'VERIFYING_KEY': None,
+    'AUDIENCE': None,
+    'ISSUER': None,
+
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
 }
 
 # ==============================================
@@ -168,11 +198,11 @@ LOGGING = {
             'style': '{',
         },
         'http_format': {
-            'format': '{asctime} {levelname} {method} {path} {status_code} {duration}s',
+            'format': '{asctime} {levelname} {message}',
             'style': '{',
         },
         'db_format': {
-            'format': '{asctime} {levelname} {duration}s\nSQL: {sql}\nParams: {params}',
+            'format': '{asctime} {levelname} {duration}s\nSQL: {sql}',
             'style': '{',
         },
     },
